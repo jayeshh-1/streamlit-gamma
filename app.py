@@ -5,6 +5,7 @@ import os
 # ==========================================
 # PAGE CONFIGURATION
 # ==========================================
+
 st.set_page_config(
     page_title="Microstructure of 0DTE | Quant Research",
     page_icon="line_chart",
@@ -125,9 +126,121 @@ st.markdown("""
     
     /* Image Styling */
     img { border-radius: 6px !important; border: 1px solid rgba(128, 128, 128, 0.15) !important; margin-bottom: 8px !important; }
+    
+    .toc-link { text-decoration: none !important; font-size: 1.2rem !important; text-align: center !important; display: block !important; padding: 12px 10px !important; font-weight: 500 !important; color: var(--text-color) !important; opacity: 0.8 !important; transition: opacity 0.2s ease-in-out !important; }
+    .toc-link:hover { 
+        opacity: 1.0 !important; 
+        color: #FBBF24 !important; 
+        background-color: rgba(251, 191, 36, 0.05) !important; /* Subtle gold glow on hover */
+        text-decoration: none !important;
+    }
+    
+   
+    /* --------------------------------------------------- */
+    /* Sidebar Brand: Compact Royal Research Card          */
+    /* --------------------------------------------------- */
+    
+    .author-card-fixed {
+        background-color: #0F172A !important; 
+        border-top: 2px solid #FBBF24 !important; /* Slimmer gold line */
+        border-radius: 10px !important;
+        padding: 12px 10px !important; /* Massively reduced padding */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+    }
+
+    .sidebar-label-fixed { 
+        color: #FBBF24 !important; 
+        font-weight: 900 !important; 
+        letter-spacing: 0.15em !important; 
+        text-transform: uppercase !important; 
+        font-size: 1.03rem !important; /* Smaller label */
+        display: block !important;
+        margin-bottom: 2px !important; /* Tightened gap */
+    }
+
+    .sidebar-author-fixed { 
+        color: #FFFFFF !important; 
+        font-weight: 800 !important; 
+        font-size: 1.34rem !important; /* Sharper name size */
+        display: block !important;
+        line-height: 1.1 !important;
+    }
+
+    .sidebar-sub-fixed {
+        color: rgba(255, 255, 255, 0.65) !important; 
+        font-style: italic !important;
+        font-weight: 400 !important;
+        font-size: 1.05rem !important; /* Smaller designation */
+        display: block !important;
+        margin-top: 8px !important; /* Tightened gap */
+        border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        padding-top: 6px !important;
+    }
+
+    
+/* --------------------------------------------------- */
+    /* 1. Base states (Hides mobile elements on Desktop)   */
+    /* --------------------------------------------------- */
+    .mobile-sidebar-hint { display: none; }
+    .mobile-menu-badge { display: none; } 
+
+    /* --------------------------------------------------- */
+    /* 2. Mobile overrides (Triggers only on phones)       */
+    /* --------------------------------------------------- */
+    @media (max-width: 768px) {
+        
+        /* Hint text inside the sidebar */
+        .mobile-sidebar-hint {
+            display: block !important;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3B82F6;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-top: 25px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            line-height: 1.4;
+        }
+        
+        /* Floating Pointer to the Hamburger Menu */
+        .mobile-menu-badge {
+            display: block !important;
+            position: fixed;
+            top: 14px;
+            left: 55px; 
+            background-color: #2563EB;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            z-index: 999999 !important; /* FIXED: Must be higher than Streamlit's top header */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite; /* Pulses forever */
+            pointer-events: none; 
+            transition: opacity 0.2s ease-in-out, visibility 0.2s;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+
+        /* Hides the badge immediately when the sidebar expands */
+        .stApp:has([data-testid="stSidebar"][aria-expanded="true"]) .mobile-menu-badge {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+    }
+    
     </style>
-    
-    
 """, unsafe_allow_html=True)
 
 
@@ -157,14 +270,22 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 st.sidebar.markdown("---")
-st.sidebar.info(
-    "**Author:** Jayesh Chaudhary\n\n"
-    "**Role:** Quantitative Researcher\n\n"
-)
+st.sidebar.markdown("""
+<div class="author-card-fixed">
+    <span class="sidebar-label-fixed">AUTHOR</span>
+    <span class="sidebar-author-fixed">Jayesh Chaudhary</span>
+    <span class="sidebar-sub-fixed">Quantitative Researcher</span>
+</div>
+    
+""", unsafe_allow_html=True)
 
 # ==========================================
 # MAIN DOCUMENT: TITLE (HERO SECTION)
 # ==========================================
+
+# Mobile Tooltip pointing to the Sidebar
+st.markdown('<div class="mobile-menu-badge">👈 Topics Menu</div>', unsafe_allow_html=True)
+
 st.markdown("<h1>Intraday Microstructure of 0DTE options: Market Maker Gamma Pins and Volatility Expansion</h1>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'>An Empirical Analysis of Dealer Positioning and Intraday Volatility.</p>", unsafe_allow_html=True)
 # Small, muted author line under the subtitle
