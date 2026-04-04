@@ -16,10 +16,10 @@ st.set_page_config(
 st.markdown("""
     <style>
     /* Main container width and font stack */
-    .main { max-width: 1050px; margin: 0 auto; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .main { max-width: 1100px; margin: 0 auto; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     
     /* Typography Upgrades for Maximum Readability (Perfectly Balanced) */
-    h1 { text-align: center; font-size: 3.0rem !important; font-weight: 900 !important; margin-bottom: 0.5rem !important; line-height: 1.25 !important; color: var(--text-color) !important; opacity: 0.95 !important; letter-spacing: -0.02em !important; }
+    h1 { text-align: center; font-size: 2.8rem !important; font-weight: 900 !important; margin-bottom: 0.5rem !important; line-height: 1.25 !important; color: var(--text-color) !important; opacity: 0.95 !important; letter-spacing: -0.02em !important; }
     .subtitle { text-align: center; font-size: 1.3rem !important; color: var(--text-color) !important; opacity: 0.75 !important; font-style: italic !important; margin-bottom: 1.8rem !important; font-weight: 400 !important; }
     
     /* Elegant section spacing */
@@ -192,6 +192,7 @@ with col_c:
     st.markdown(f"<div style='{box_css}'><div style='{lbl_css}'>Data Sources</div><div style='{val_css}'>ES + SPX</div></div>", unsafe_allow_html=True)
 with col_d:
     st.markdown(f"<div style='{box_css}'><div style='{lbl_css}'>Resolution</div><div style='{val_css}'>1m & EOD</div></div>", unsafe_allow_html=True)
+    
 # ==========================================
 # SECTION 0: TLDR / INTUITION (CRITICAL)
 # ==========================================
@@ -757,7 +758,7 @@ In other words, intraday price behavior is not just noise — it reflects the me
 st.markdown("""
 <div style='text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(128, 128, 128, 0.2);'>
     <p style='font-size: 1.15rem; color: #6B7280; font-style: italic;'>
-        If you made it all the way to the end, thank you for reviewing my work. <br>
+        If you made it all the way to the end, thank you for viewing my work. <br>
         I am always looking to refine these projects, so if you have critiques, suggestions, or just want to talk microstructure, I'd love to hear them:
     </p>
     <a href='mailto:jayeshchaudharyofficial@gmail.com' style='font-size: 1.15rem; font-weight: 700; color: #FFFFFF; background-color: #3B82F6; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; transition: all 0.2s;'>
