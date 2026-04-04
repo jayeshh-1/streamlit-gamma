@@ -759,7 +759,7 @@ st.markdown("""
 <div style='text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(128, 128, 128, 0.2);'>
     <p style='font-size: 1.15rem; color: #6B7280; font-style: italic;'>
         If you made it all the way to the end, thank you for viewing my work. <br>
-        I am always looking to refine these projects, so if you have critiques, suggestions, or just want to talk microstructure, I'd love to hear them:
+        I am always looking to refine these projects, so if you have critiques, suggestions, or just want to talk market dynamics, I'd love to hear them:
     </p>
     <a href='mailto:jayeshchaudharyofficial@gmail.com' style='font-size: 1.15rem; font-weight: 700; color: #FFFFFF; background-color: #3B82F6; padding: 10px 24px; border-radius: 6px; text-decoration: none; display: inline-block; transition: all 0.2s;'>
         ✉️ Email Me
