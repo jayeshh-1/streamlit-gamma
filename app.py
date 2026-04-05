@@ -121,8 +121,6 @@ st.markdown("""
     }
     
     
-    .toc-link { text-decoration: none !important; font-size: 1rem !important; display: block !important; padding: 6px 0 !important; font-weight: 500 !important; color: var(--text-color) !important; opacity: 0.85 !important; transition: all 0.2s ease-in-out !important; }
-    .toc-link:hover { color: #3B82F6 !important; opacity: 1 !important; }
     
     /* Image Styling */
     img { border-radius: 6px !important; border: 1px solid rgba(128, 128, 128, 0.15) !important; margin-bottom: 8px !important; }
@@ -267,6 +265,11 @@ st.sidebar.markdown("""
 <a href="#7-time-of-day-dynamics-theta-burnout" target="_self" class="toc-link">7. Time-of-Day Dynamics (Theta)</a>
 <a href="#8-model-limitations" target="_self" class="toc-link">8. Model Limitations</a>
 <a href="#9-conclusion-tech-stack" target="_self" class="toc-link">9. Conclusion</a>
+
+<div class="mobile-sidebar-hint">
+    <strong>Tap outside</strong> or <strong>swipe left</strong> to close menu.
+</div>
+
 """, unsafe_allow_html=True)
 
 st.sidebar.markdown("---")
